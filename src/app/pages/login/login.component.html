@@ -1,0 +1,42 @@
+<form [formGroup]="formGroup" (ngSubmit)="login()">
+  <!-- <input type="email" placeholder="Email :" formControlName="email" />
+
+ <span *ngIf="email?.errors && email?.errors?.required" style="color: red">
+    Ce champs est requis
+  </span> 
+  <span *ngIf="email?.errors && email?.errors?.email" style="color: red">
+    Format d'email invalid
+  </span>
+
+  <input
+    type="password"
+    placeholder="Mot de passe :"
+    formControlName="password"
+  />
+
+   <span
+    *ngIf="password?.errors && password?.errors?.required"
+    style="color: red"
+  >
+    Ce champs est requis
+  </span>  -->
+
+  <div class="formfield">
+    <input type="email" formControlName="email" id="email" required />
+    <label alt="Email" placeholder="Email" for="email">Email</label>
+  </div>
+  <span *ngIf="email?.errors && email?.errors?.email" style="color: red">
+    Format d'email invalid
+  </span>
+
+  <div class="formfield">
+    <input type="password" formControlName="password" id="password" required />
+    <label alt="Mot de passe" placeholder="Email" for="password"
+      >Mot de passe</label
+    >
+  </div>
+
+  <button type="submit" [disabled]="formGroup.status === 'INVALID'">
+    Se connecter
+  </button>
+</form>

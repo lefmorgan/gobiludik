@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "John Doe",
+      "email": "john.doe@web-atrio.com",
+      "password": "john.doe@web-atrio.com",
+      "avatar": "",
+      "statId": 1
+    },
+    {
+      "id": 2,
+      "username": "Morgan Elodie",
+      "email": "morgan.elodie@web-atrio.com",
+      "password": "morgan.elodie@web-atrio.com",
+      "avatar": ""
+    }
+  ]
+}
