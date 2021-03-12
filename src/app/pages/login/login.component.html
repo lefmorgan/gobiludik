@@ -1,5 +1,5 @@
-<form [formGroup]="formGroup" (ngSubmit)="login()">
-  <!-- <input type="email" placeholder="Email :" formControlName="email" />
+<!-- <form [formGroup]="formGroup" (ngSubmit)="login()"> -->
+<!-- <input type="email" placeholder="Email :" formControlName="email" />
 
  <span *ngIf="email?.errors && email?.errors?.required" style="color: red">
     Ce champs est requis
@@ -21,7 +21,7 @@
     Ce champs est requis
   </span>  -->
 
-  <div class="formfield">
+<!-- <div class="formfield">
     <input type="email" formControlName="email" id="email" required />
     <label alt="Email" placeholder="Email" for="email">Email</label>
   </div>
@@ -38,5 +38,115 @@
 
   <button type="submit" [disabled]="formGroup.status === 'INVALID'">
     Se connecter
-  </button>
-</form>
+  </button> -->
+<!-- </form> -->
+
+<div class="login">
+  <div id="logo">
+    <h1>GOBILUDIK</h1>
+  </div>
+  <section class="gobiludik-login">
+    <form [formGroup]="formGroup" (ngSubmit)="login()">
+      <div id="fade-box">
+        <input type="email" placeholder="Email :" formControlName="email" />
+        <div class="email-error" *ngIf="email.errors && email.touched">
+          email invalid
+        </div>
+        <input
+          type="password"
+          placeholder="Mot de passe :"
+          formControlName="password"
+        />
+        <div class="password-error" *ngIf="password.errors && password.touched">
+          mot de passe invalid
+          <span *ngIf="isWrongPassword">mot de passe incorrect</span>
+        </div>
+
+        <button type="submit" [disabled]="formGroup.invalid">Log In</button>
+      </div>
+    </form>
+
+    <div class="login-error" *ngIf="isWrongPassword">
+      email et/ou mot de passe incorrect(s)
+    </div>
+    <div class="hexagons">
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <br />
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <br />
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+
+      <br />
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <br />
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+      <span>&#x2B22;</span>
+    </div>
+  </section>
+
+  <div id="circle1">
+    <div id="inner-cirlce1">
+      <h2></h2>
+    </div>
+  </div>
+
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>

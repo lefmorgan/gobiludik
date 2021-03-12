@@ -10,8 +10,8 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  public form = { email: '', password: '' };
-
+  form: FormGroup;
+  isWrongPassword = false;
   public formGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', Validators.required),
@@ -19,21 +19,32 @@ export class LoginComponent implements OnInit {
 
   constructor(public authService: AuthService, private router: Router) {}
 
-  ngOnInit(): void {}
-
   get email() {
     return this.formGroup.get('email');
   }
+
   get password() {
     return this.formGroup.get('password');
   }
+
+  ngOnInit(): void {}
 
   public login(): void {
     const data = this.formGroup.getRawValue();
 
     this.authService.login().subscribe((res: User[]) => {
-      this.authService.user = res[0];
-      this.router.navigateByUrl('/');
+      console.log(res.find((item) => item.email === 'john.doe@web-atrio.com'));
+
+      if (
+        res.find((item) => item.email === data.email) &&
+        res.find((item) => item.password === data.password)
+      ) {
+        this.authService.user = res[0];
+        this.router.navigateByUrl('/');
+      } else {
+        this.isWrongPassword = true;
+        return;
+      }
     });
   }
 }

@@ -1,6 +1,14 @@
 @import "styles/reset";
 @import "styles/variables";
+@import "styles/mixins";
+
+@import "https://fonts.googleapis.com/css?family=Ubuntu:400,700italic",
+  "https://fonts.googleapis.com/css?family=Cabin:400";
 
 * {
   box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
 }
