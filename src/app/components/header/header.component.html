@@ -1,4 +1,23 @@
-<p>header works!</p>
-<a routerLink="/boardgame" routerLinkActive="active">boardgame</a>
-<hr />
-<a routerLink="/videogame" routerLinkActive="active">videogame</a>
+<header>
+  <div class="header-upper">
+    <div class="title-container">
+      <div class="user"><a routerLink="/boardgame">Arnold</a></div>
+      <h1>GOBILUDIK</h1>
+      <div class="social-icon"><i class="">icon</i></div>
+    </div>
+  </div>
+
+  <nav>
+    <ul class="link-container">
+      <li class="link-wrapper">
+        <a routerLink="/boardgame" routerLinkActive="active">boardgame</a>
+      </li>
+      <li class="link-wrapper">
+        <a routerLink="/videogame" routerLinkActive="active">videogame</a>
+      </li>
+      <li class="link-wrapper">
+        <a routerLink="/" routerLinkActive="active">play</a>
+      </li>
+    </ul>
+  </nav>
+</header>

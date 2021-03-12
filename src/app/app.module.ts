@@ -9,10 +9,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HeaderComponent } from './components/header/header.component';
-import { BoardgameContainerComponent } from './pages/boardgame-container/boardgame-container.component';
 import { VideogameContainerComponent } from './pages/videogame-container/videogame-container.component';
 import { BoardgameModule } from './pages/boardgame-container/boardgame.module';
-
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user.model';
@@ -17,7 +17,12 @@ export class LoginComponent implements OnInit {
     password: new FormControl('', Validators.required),
   });
 
-  constructor(public authService: AuthService, private router: Router) {}
+  constructor(
+    private el: ElementRef,
+    private renderer: Renderer2,
+    public authService: AuthService,
+    private router: Router
+  ) {}
 
   get email() {
     return this.formGroup.get('email');
@@ -28,6 +33,14 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  ngAfterViewInit() {
+    this.renderer.setStyle(
+      this.el.nativeElement.ownerDocument.body,
+      'backgroundColor',
+      '#000'
+    );
+  }
 
   public login(): void {
     const data = this.formGroup.getRawValue();

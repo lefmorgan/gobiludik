@@ -1,0 +1,57 @@
+@import "variables";
+header {
+  //  background-color: #202020;
+  background-color: $gobiludik-med-green;
+  .header-upper {
+    border-bottom: 1px solid #393939;
+    padding: 0 20px;
+  }
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 52px;
+  .social-icon,
+  .user {
+    border-left: 1px solid #393939;
+    border-right: 1px solid #393939;
+    padding: 0 25px;
+    height: 51px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.link-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 40px;
+  li {
+    margin: 2em;
+    padding: 1em;
+    .active {
+      opacity: 0.5;
+    }
+  }
+}
+
+.nav-upper,
+.nav-lower {
+  max-width: 1200px;
+  margin: auto;
+  height: 52px;
+}
+.nav-upper {
+  display: flex;
+  justify-content: space-between;
+}
+.nav-lower {
+  height: 40px;
+}
