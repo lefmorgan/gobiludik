@@ -1,0 +1,30 @@
+@import "variables";
+
+.section {
+  margin: 2em 0;
+}
+
+.card-wrapper {
+  width: 1178px;
+  height: 280px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2em;
+  .card {
+    background-color: #424242;
+    .card-body {
+      padding: 0.5em;
+      font-size: 16px;
+      p {
+        color: $gobiludik-med-green;
+        text-transform: uppercase;
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+}
+
+img {
+  height: 60%;
+  width: 100%;
+}
