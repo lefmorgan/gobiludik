@@ -14,6 +14,13 @@
       "email": "morgan.elodie@web-atrio.com",
       "password": "morgan.elodie@web-atrio.com",
       "avatar": ""
+    },
+    {
+      "username": "bob",
+      "email": "bob@bob",
+      "password": "bob",
+      "avatar": 2,
+      "id": 3
     }
   ]
 }

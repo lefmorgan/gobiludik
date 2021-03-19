@@ -11,6 +11,20 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HeaderComponent } from './components/header/header.component';
 import { VideogameContainerComponent } from './pages/videogame-container/videogame-container.component';
 import { BoardgameModule } from './pages/boardgame-container/boardgame.module';
+import { PlayContainerComponent } from './pages/play-container/play-container.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+// material
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
+import { LoginUserComponent } from './components/login/login-user/login-user.component';
+import { CreateUserComponent } from './components/login/create-user/create-user.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSelectModule } from '@angular/material/select';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +33,9 @@ import { BoardgameModule } from './pages/boardgame-container/boardgame.module';
     NotFoundComponent,
     HeaderComponent,
     VideogameContainerComponent,
+    PlayContainerComponent,
+    LoginUserComponent,
+    CreateUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,6 +43,17 @@ import { BoardgameModule } from './pages/boardgame-container/boardgame.module';
     HttpClientModule,
     ReactiveFormsModule,
     BoardgameModule,
+    BrowserAnimationsModule,
+
+    //material
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

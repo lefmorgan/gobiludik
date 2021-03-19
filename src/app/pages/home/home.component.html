@@ -1,67 +1,12 @@
-<p>home works!</p>
 <div class="section">
   <div class="container">
     <h2>BOARGAME</h2>
-    <div class="card-wrapper">
-      <div class="card">
-        <div class="header">
-          <img
-            src="https://assets.codepen.io/5217007/winter-g35fe9a32d_640.jpg"
-            alt="img1"
-          />
-        </div>
-        <div class="card-body">
-          <p>réédition</p>
-          <a href=""
-            >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit
-            dolore quis eaque?</a
-          >
-        </div>
-      </div>
-      <div class="card">
-        <div class="header">
-          <img
-            src="https://assets.codepen.io/5217007/winter-g35fe9a32d_640.jpg"
-            alt="img1"
-          />
-        </div>
-        <div class="card-body">
-          <p>réédition</p>
-          <a href=""
-            >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit
-            dolore quis eaque?</a
-          >
-        </div>
-      </div>
-      <div class="card">
-        <div class="header">
-          <img
-            src="https://assets.codepen.io/5217007/winter-g35fe9a32d_640.jpg"
-            alt="img1"
-          />
-        </div>
-        <div class="card-body">
-          <p>réédition</p>
-          <a href=""
-            >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit
-            dolore quis eaque?</a
-          >
-        </div>
-      </div>
-      <div class="card">
-        <div class="header">
-          <img
-            src="https://assets.codepen.io/5217007/winter-g35fe9a32d_640.jpg"
-            alt="img1"
-          />
-        </div>
-        <div class="card-body">
-          <p>réédition</p>
-          <a href=""
-            >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit
-            dolore quis eaque?</a
-          >
-        </div>
+
+    <div class="card-wrapper" *ngIf="boardgames">
+      <div class="card" *ngFor="let boardgame of boardgames">
+        <img [src]="boardgame.images.small" alt="img1" />
+        <h2>{{ boardgame.handle }}</h2>
+        <p class="desc">{{ boardgame.description_preview }}</p>
       </div>
     </div>
   </div>

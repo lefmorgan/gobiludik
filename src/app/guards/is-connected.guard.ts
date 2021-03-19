@@ -26,7 +26,7 @@ export class IsConnectedGuard implements CanActivate {
     if (this.authService.user) {
       return true;
     } else {
-      return this.router.navigateByUrl('/login');
+      return this.router.navigateByUrl('');
     }
   }
 }

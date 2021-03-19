@@ -6,13 +6,13 @@ import { BoardgameContainerComponent } from './pages/boardgame-container/boardga
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { PlayContainerComponent } from './pages/play-container/play-container.component';
 import { VideogameContainerComponent } from './pages/videogame-container/videogame-container.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    canActivate: [IsConnectedGuard],
   },
   {
     path: 'boardgame',
@@ -22,6 +22,11 @@ const routes: Routes = [
   {
     path: 'videogame',
     component: VideogameContainerComponent,
+    canActivate: [IsConnectedGuard],
+  },
+  {
+    path: 'play',
+    component: PlayContainerComponent,
     canActivate: [IsConnectedGuard],
   },
   {

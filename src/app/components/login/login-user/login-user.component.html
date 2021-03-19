@@ -1,0 +1,80 @@
+<div class="header">
+  <button mat-button>
+    <mat-icon (click)="cancel()">close</mat-icon>
+  </button>
+</div>
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <mat-form-field appearance="outline" *ngIf="isCreateUser">
+    <mat-label>nom d'utilisateur</mat-label>
+    <input
+      matInput
+      formControlName="username"
+      type="username"
+      name="username"
+      required
+    />
+    <mat-error *ngIf="f.email.invalid">{{ getErrorEmailMessage() }}</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>email</mat-label>
+    <input
+      matInput
+      formControlName="email"
+      type="email"
+      name="email"
+      required
+    />
+    <mat-error *ngIf="f.email.invalid">{{ getErrorEmailMessage() }}</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>mot de passe</mat-label>
+    <input
+      matInput
+      formControlName="password"
+      [type]="hide ? 'password' : 'text'"
+    />
+    <button
+      mat-icon-button
+      matSuffix
+      (click)="hide = !hide"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide"
+    >
+      <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+    </button>
+    <mat-error *ngIf="f.password.invalid"
+      >Vous devez saisir votre mot de passe</mat-error
+    >
+  </mat-form-field>
+
+  <div class="avatar-field">
+    <mat-form-field appearance="outline" *ngIf="isCreateUser">
+      <mat-label>Mon avatar</mat-label>
+      <mat-select formControlName="avatar">
+        <mat-option *ngFor="let avatar of avatars" [value]="avatar.id">
+          {{ avatar.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="imagePreview" *ngIf="isCreateUser">
+      <img [src]="avatars[loginForm.value['avatar']].img" [alt]="" />
+    </div>
+  </div>
+  <div class="button-log" *ngIf="!isCreateUser">
+    <button mat-raised-button color="primary">Sign in</button>
+  </div>
+</form>
+
+<div class="button-creation">
+  <button
+    mat-raised-button
+    *ngIf="isCreateUser"
+    color="primary"
+    (click)="createUser()"
+  >
+    Créer votre compte
+  </button>
+  <button mat-raised-button *ngIf="!isCreateUser" (click)="openCreateUser()">
+    Création de compte
+  </button>
+</div>

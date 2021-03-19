@@ -26,7 +26,21 @@ export class AuthService {
     }
   }
 
-  public login(): Observable<User[]> {
+  public getUsers(): Observable<User[]> {
     return this.http.get<User[]>('http://localhost:3000/users');
+  }
+
+  public addUser(user: User): Observable<User> {
+    user.id = Math.floor(Math.random() * Math.floor(999));
+    const username = user.username;
+    const email = user.email;
+    const password = user.password;
+    const avatar = user.avatar;
+    return this.http.post<User>('http://localhost:3000/users', {
+      username,
+      email,
+      password,
+      avatar,
+    });
   }
 }

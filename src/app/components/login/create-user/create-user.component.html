@@ -1,0 +1,48 @@
+<div class="header">
+  <button mat-button>
+    <mat-icon (click)="cancel()">close</mat-icon>
+  </button>
+
+  <h1>Créer votre compte</h1>
+</div>
+
+<form [formGroup]="createUserForm" (ngSubmit)="createUser()">
+  <mat-form-field appearance="outline">
+    <mat-label>nom d'utilisateur</mat-label>
+    <input
+      matInput
+      formControlName="username"
+      type="text"
+      name="username"
+      required
+    />
+    <mat-error *ngIf="email.invalid">{{ getErrorEmailMessage() }}</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>email</mat-label>
+    <input
+      matInput
+      formControlName="email"
+      type="email"
+      name="email"
+      required
+    />
+    <mat-error *ngIf="email.invalid">{{ getErrorEmailMessage() }}</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>mot de passe</mat-label>
+    <input
+      matInput
+      formControlName="password"
+      type="password"
+      name="password"
+      required
+    />
+    <mat-error *ngIf="password.invalid"
+      >Vous devez saisir votre mot de passe</mat-error
+    >
+  </mat-form-field>
+  <div class="button-log">
+    <button mat-raised-button color="primary">Sign in</button>
+  </div>
+</form>

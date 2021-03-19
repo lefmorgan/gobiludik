@@ -12,7 +12,7 @@ export class BoardgameService {
 
   public getAllGames(): Observable<any> {
     const url =
-      'https://api.boardgameatlas.com/api/search?client_id=JLBr5npPhV';
+      'https://api.boardgameatlas.com/api/search?limit=100&client_id=JLBr5npPhV';
     return this.http.get<any>(url).pipe(
       map((response: any) => {
         console.log(response);
@@ -38,5 +38,12 @@ export class BoardgameService {
         return data;
       })
     );
+  }
+
+  getRedditBoardgame() {
+    const url =
+      'https://api.boardgameatlas.com/api/search?gt_reddit_week_count=4&limit=4&client_id=JLBr5npPhV';
+
+    return this.http.get<any>(url);
   }
 }

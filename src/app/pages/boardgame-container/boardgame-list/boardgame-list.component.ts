@@ -14,7 +14,6 @@ export class BoardgameListComponent implements OnInit {
       this.boardgames = res;
       window.localStorage.setItem('games', JSON.stringify(res));
     });
-    console.log(this.boardgames);
   }
 
   ngOnInit(): void {}

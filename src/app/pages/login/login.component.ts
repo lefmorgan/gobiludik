@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
   public login(): void {
     const data = this.formGroup.getRawValue();
 
-    this.authService.login().subscribe((res: User[]) => {
+    this.authService.getUsers().subscribe((res: User[]) => {
       console.log(res.find((item) => item.email === 'john.doe@web-atrio.com'));
 
       if (

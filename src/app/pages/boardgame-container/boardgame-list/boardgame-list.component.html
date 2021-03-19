@@ -1,1 +1,7 @@
 <p>boardgame-list works!</p>
+
+<div *ngIf="boardgames[0]">
+  <img [src]="boardgames[0].images" alt="" />
+</div>
+
+<div *ngFor="let game of boardgames">{{ game.name }} <img src="" alt="" /></div>

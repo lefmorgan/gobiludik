@@ -1,15 +1,22 @@
 <header>
   <div class="header-upper">
     <div class="title-container">
-      <div class="user">
-        <a routerLink="/boardgame">{{ user.username }}</a>
+      <div class="login" *ngIf="!user">
+        <a (click)="loginUser()">Se connecter</a>
+      </div>
+      <div class="user" *ngIf="user">
+        <div class="imagePreview">
+          <img *ngIf="user" [src]="avatar['GreenGoblin3']" alt="img1" />
+        </div>
+
+        <a routerLink="/boardgame">{{ user.username }} </a>
       </div>
       <h1><a routerLink="">GOBILUDIK</a></h1>
       <div class="social-icon"><i class="">icon</i></div>
     </div>
   </div>
 
-  <nav>
+  <nav *ngIf="user">
     <ul class="link-container">
       <li class="link-wrapper">
         <a routerLink="/boardgame" routerLinkActive="active">boardgame</a>
@@ -18,7 +25,7 @@
         <a routerLink="/videogame" routerLinkActive="active">videogame</a>
       </li>
       <li class="link-wrapper">
-        <a routerLink="/" routerLinkActive="active">play</a>
+        <a routerLink="/play" routerLinkActive="active">play</a>
       </li>
     </ul>
   </nav>
