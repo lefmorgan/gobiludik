@@ -5,6 +5,8 @@ import { BoardgameListComponent } from './boardgame-list/boardgame-list.componen
 import { BoardgameDetailComponent } from './boardgame-detail/boardgame-detail.component';
 import { RouterModule } from '@angular/router';
 import { BoardgameContainerComponent } from './boardgame-container.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -12,6 +14,12 @@ import { BoardgameContainerComponent } from './boardgame-container.component';
     BoardgameListComponent,
     BoardgameDetailComponent,
   ],
-  imports: [CommonModule, RouterModule, BoardgameRouting],
+  imports: [
+    CommonModule,
+    RouterModule,
+    BoardgameRouting,
+    MatTableModule,
+    MatFormFieldModule,
+  ],
 })
 export class BoardgameModule {}

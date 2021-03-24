@@ -11,7 +11,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HeaderComponent } from './components/header/header.component';
 import { VideogameContainerComponent } from './pages/videogame-container/videogame-container.component';
 import { BoardgameModule } from './pages/boardgame-container/boardgame.module';
-import { PlayContainerComponent } from './pages/play-container/play-container.component';
+import { PlayModule } from './pages/play-container/play.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // material
@@ -25,6 +25,8 @@ import { CreateUserComponent } from './components/login/create-user/create-user.
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
+import { MatMenuModule } from '@angular/material/menu';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,6 @@ import { MatSelectModule } from '@angular/material/select';
     NotFoundComponent,
     HeaderComponent,
     VideogameContainerComponent,
-    PlayContainerComponent,
     LoginUserComponent,
     CreateUserComponent,
   ],
@@ -54,6 +55,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatIconModule,
     MatToolbarModule,
     MatSelectModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

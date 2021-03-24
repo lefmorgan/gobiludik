@@ -1,0 +1,52 @@
+<p>the-writer-clicker works!</p>
+<section class="section">
+  <div class="options">
+    <div class="options_sa">sa</div>
+    <div class="options_sa">sf</div>
+  </div>
+  <div class="writer cadre">
+    <div class="pixels_top"></div>
+    <div class="pixels_bottom"></div>
+    <h3>progression</h3>
+    <div class="date">
+      <mat-icon>calendar_today</mat-icon>
+      <span>
+        {{ date.setDate(date.getDate()) | date: "dd LLL yyyy":"":"fr" }}</span
+      >
+    </div>
+    <div class="followers">
+      <img
+        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/followersIcon.png"
+      />
+      <div class="pixels_top"></div>
+      <div class="pixels_bottom"></div>
+      FOLLOWERS:
+      <span>0</span>
+    </div>
+
+    <div class="writer_bar">
+      <div class="writer_bar_progress"></div>
+    </div>
+    <div class="writer_skills">
+      <div class="writer_skill cadre style">
+        <div class="pixels_top"></div>
+        <div class="pixels_bottom"></div>
+        style
+      </div>
+      <div class="writer_skill cadre scenario">
+        <div class="pixels_top"></div>
+        <div class="pixels_bottom"></div>
+        scenario
+      </div>
+    </div>
+  </div>
+  <div *ngIf="username" class="username">{{ username }}</div>
+  <div class="mashing cadre">
+    <div class="pixels_top"></div>
+    <div class="pixels_bottom"></div>
+    <h3>
+      <span>CLICK HERE !</span>
+      <mat-icon>calendar_today</mat-icon>
+    </h3>
+  </div>
+</section>

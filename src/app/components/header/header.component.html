@@ -8,11 +8,16 @@
         <div class="imagePreview">
           <img *ngIf="user" [src]="avatar['GreenGoblin3']" alt="img1" />
         </div>
-
-        <a routerLink="/boardgame">{{ user.username }} </a>
+        <a [matMenuTriggerFor]="menu">
+          {{ user.username }}
+        </a>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Profile</button>
+          <button mat-menu-item>déconnexion</button>
+        </mat-menu>
       </div>
       <h1><a routerLink="">GOBILUDIK</a></h1>
-      <div class="social-icon"><i class="">icon</i></div>
+      <div class="social-icon"><span class="material-icons"> poll </span></div>
     </div>
   </div>
 

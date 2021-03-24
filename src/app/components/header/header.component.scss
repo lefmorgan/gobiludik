@@ -37,34 +37,6 @@ header {
       position: relative;
       cursor: pointer;
       padding-left: 30px;
-      &::before,
-      &::after {
-        position: absolute;
-        transition: all 1s ease 0s;
-      }
-      &::after {
-        content: "";
-        width: 3px;
-        height: 3px;
-        bottom: 0.5em;
-        left: 0;
-      }
-      &:focus::after,
-      &:hover::after,
-      &:focus::before,
-      &:hover::before {
-        width: 50%;
-        height: 3px;
-        background-color: #fff;
-        transition: all 1s ease 0s;
-      }
-      &::before {
-        content: "";
-        width: 3px;
-        height: 3px;
-        bottom: 0.5em;
-        right: 0;
-      }
     }
     .imagePreview {
       width: 35px;
@@ -80,6 +52,9 @@ header {
         height: 100%;
       }
     }
+    span {
+      font-size: 40px;
+    }
   }
 }
 
@@ -94,8 +69,36 @@ header {
   li {
     margin: 2em;
     padding: 1em;
-    .active {
-      opacity: 0.5;
+    a {
+      position: relative;
+      transition: color 1s ease;
+      padding: 0.5em;
+      &::before,
+      &::after {
+        position: absolute;
+        transition: all 1s ease 0s;
+        bottom: 0.25em;
+        width: 3px;
+        height: 3px;
+        content: "";
+      }
+      &::after {
+        left: 0;
+      }
+      .active::after,
+      .active::before,
+      &:focus::after,
+      &:hover::after,
+      &:focus::before,
+      &:hover::before {
+        width: 50%;
+        height: 3px;
+        background-color: #fff;
+        transition: all 1s ease 0s;
+      }
+      &::before {
+        right: 0;
+      }
     }
   }
 }

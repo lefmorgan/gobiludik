@@ -26,8 +26,11 @@ const routes: Routes = [
   },
   {
     path: 'play',
-    component: PlayContainerComponent,
-    canActivate: [IsConnectedGuard],
+    loadChildren: './pages/play-container/play.module#PlayModule',
+    /* loadChildren: () =>
+      import('./pages/play-container/play.module').then((m) => m.PlayModule),*/
+    //  component: PlayContainerComponent,
+    // canActivate: [IsConnectedGuard],
   },
   {
     path: 'login',

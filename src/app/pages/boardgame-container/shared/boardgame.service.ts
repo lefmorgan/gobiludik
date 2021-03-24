@@ -29,8 +29,8 @@ export class BoardgameService {
           currentGame.complexity =
             games.average_learning_complexity +
             games.average_strategy_complexity;
-          currentGame.playtime =
-            games.min_playtime + ' - ' + games.max_playtime;
+          currentGame.price = games.price;
+          currentGame.year_published = games.year_published;
           currentGame.images = games.image_url;
 
           data.push(currentGame);
