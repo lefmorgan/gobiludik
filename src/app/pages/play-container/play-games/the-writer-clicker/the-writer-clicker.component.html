@@ -25,7 +25,7 @@
     </div>
 
     <div class="writer_bar">
-      <div class="writer_bar_progress"></div>
+      <div class="writer_bar_progress" [style.width]="progress + '%'"></div>
     </div>
     <div class="writer_skills">
       <div class="writer_skill cadre style">
@@ -41,7 +41,7 @@
     </div>
   </div>
   <div *ngIf="username" class="username">{{ username }}</div>
-  <div class="mashing cadre">
+  <div class="mashing cadre test" #mashinPup (click)="onMashing()">
     <div class="pixels_top"></div>
     <div class="pixels_bottom"></div>
     <h3>
@@ -50,3 +50,4 @@
     </h3>
   </div>
 </section>
+<!-- [@pupTrig] -->

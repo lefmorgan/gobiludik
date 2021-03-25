@@ -101,7 +101,6 @@ $pixelHighlightColor: #a2698c;
   top: 125px;
   height: 160px;
   z-index: 2;
-  line-height: 160px;
   left: 110px;
   margin: auto;
   width: 345px;
@@ -122,6 +121,11 @@ $pixelHighlightColor: #a2698c;
     to {
       top: 102px;
     }
+  }
+  .pup {
+    height: 50px;
+    width: 100px;
+    position: absolute;
   }
 }
 

@@ -4,6 +4,7 @@ import { Route, RouterModule } from '@angular/router';
 import { PlayContainerComponent } from './play-container.component';
 import { TheWriterClickerComponent } from './play-games/the-writer-clicker/the-writer-clicker.component';
 import { MatIconModule } from '@angular/material/icon';
+
 const PLAY_ROUTES: Route[] = [
   {
     path: '',
